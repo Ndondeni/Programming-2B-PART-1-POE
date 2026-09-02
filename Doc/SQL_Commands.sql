@@ -97,7 +97,7 @@ CREATE TABLE Registrations (
         REFERENCES Categories(CategoryID)
         ON DELETE RESTRICT
 );
---Checkingpoint
+--checkpoint
 CREATE TABLE Checkpoints (
     CheckpointID INT AUTO_INCREMENT PRIMARY KEY,
     EventID INT NOT NULL,
