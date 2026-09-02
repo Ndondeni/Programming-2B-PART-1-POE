@@ -48,7 +48,7 @@ CREATE TABLE Categories (
     Distance VARCHAR(50) NOT NULL,
     Description VARCHAR(255)
 );
---Insrting Testing Data
+--inserting Testing Data
 INSERT INTO Categories (CategoryName, Distance, Description)
 VALUES
     ('Running', '5 km', 'Short distance running event'),
