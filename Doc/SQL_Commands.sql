@@ -1,3 +1,10 @@
 CREATE DATABASE MarathonManagementSystem;
 
 USE MarathonManagementSystem;
+
+--Creating Tables
+--Role
+CREATE TABLE Roles (
+    RoleID INT AUTO_INCREMENT PRIMARY KEY,
+    RoleName VARCHAR(50) NOT NULL UNIQUE
+);
