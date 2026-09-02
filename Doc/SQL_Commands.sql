@@ -109,4 +109,18 @@ CREATE TABLE Checkpoints (
     FOREIGN KEY (EventID)
         REFERENCES Events(EventID)
         ON DELETE CASCADE
-); 
+);
+-- Payment Table
+CREATE TABLE Payments (
+    PaymentID INT AUTO_INCREMENT PRIMARY KEY,
+    RegistrationID INT NOT NULL,
+    Amount DECIMAL(10,2) NOT NULL,
+    PaymentDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PaymentMethod VARCHAR(50),
+    PaymentStatus VARCHAR(50) DEFAULT 'Pending',
+    TransactionRef VARCHAR(100),
+
+    FOREIGN KEY (RegistrationID)
+        REFERENCES Registrations(RegistrationID)
+        ON DELETE CASCADE
+);
