@@ -48,4 +48,14 @@ CREATE TABLE Categories (
     Distance VARCHAR(50) NOT NULL,
     Description VARCHAR(255)
 );
-
+--Insrting Testing Data
+INSERT INTO Categories (CategoryName, Distance, Description)
+VALUES
+    ('Running', '5 km', 'Short distance running event'),
+    ('Running', '10 km', 'Medium distance running event'),
+    ('Running', '21 km', 'Half marathon running event'),
+    ('Running', '42 km', 'Full marathon running event'),
+    ('Cycling', '20 km', 'Short distance cycling event'),
+    ('Cycling', '50 km', 'Medium distance cycling event'),
+    ('Walking', '5 km', 'Short distance walking event'),
+    ('Walking', '10 km', 'Long distance walking event');
