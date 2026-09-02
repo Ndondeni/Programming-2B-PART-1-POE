@@ -59,3 +59,19 @@ VALUES
     ('Cycling', '50 km', 'Medium distance cycling event'),
     ('Walking', '5 km', 'Short distance walking event'),
     ('Walking', '10 km', 'Long distance walking event');
+-- Event
+CREATE TABLE Events (
+    EventID INT AUTO_INCREMENT PRIMARY KEY,
+    EventName VARCHAR(150) NOT NULL,
+    EventDate DATE NOT NULL,
+    StartTime TIME NOT NULL,
+    EndTime TIME,
+    Location VARCHAR(255) NOT NULL,
+    Description TEXT,
+    OrganizerID INT,
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (OrganizerID)
+        REFERENCES Users(UserID)
+        ON DELETE SET NULL
+);
