@@ -27,3 +27,17 @@ CREATE TABLE Users (
     FOREIGN KEY (RoleID)
         REFERENCES Roles(RoleID)
 );
+--Participant
+CREATE TABLE Participants (
+    ParticipantID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NOT NULL UNIQUE,
+    DateOfBirth DATE,
+    Gender VARCHAR(20),
+    EmergencyContact VARCHAR(20),
+    Address VARCHAR(255),
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (UserID)
+        REFERENCES Users(UserID)
+        ON DELETE CASCADE
+);
