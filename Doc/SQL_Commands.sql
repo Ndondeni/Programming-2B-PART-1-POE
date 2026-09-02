@@ -1,0 +1,3 @@
+CREATE DATABASE MarathonManagementSystem;
+
+USE MarathonManagementSystem;
