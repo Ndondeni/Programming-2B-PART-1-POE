@@ -41,3 +41,10 @@ CREATE TABLE Participants (
         REFERENCES Users(UserID)
         ON DELETE CASCADE
 );
+--Catagories
+CREATE TABLE Categories (
+    CategoryID INT AUTO_INCREMENT PRIMARY KEY,
+    CategoryName VARCHAR(100) NOT NULL,
+    Distance VARCHAR(50) NOT NULL,
+    Description VARCHAR(255)
+);
