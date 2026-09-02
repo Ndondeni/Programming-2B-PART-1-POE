@@ -75,3 +75,25 @@ CREATE TABLE Events (
         REFERENCES Users(UserID)
         ON DELETE SET NULL
 );
+--Registration Table
+CREATE TABLE Registrations (
+    RegistrationID INT AUTO_INCREMENT PRIMARY KEY,
+    ParticipantID INT NOT NULL,
+    EventID INT NOT NULL,
+    CategoryID INT NOT NULL,
+    RegistrationDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Status VARCHAR(50) DEFAULT 'Pending',
+    BibNumber VARCHAR(50) UNIQUE,
+
+    FOREIGN KEY (ParticipantID)
+        REFERENCES Participants(ParticipantID)
+        ON DELETE CASCADE,
+
+    FOREIGN KEY (EventID)
+        REFERENCES Events(EventID)
+        ON DELETE CASCADE,
+
+    FOREIGN KEY (CategoryID)
+        REFERENCES Categories(CategoryID)
+        ON DELETE RESTRICT
+);
