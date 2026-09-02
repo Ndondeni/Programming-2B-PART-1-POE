@@ -97,3 +97,16 @@ CREATE TABLE Registrations (
         REFERENCES Categories(CategoryID)
         ON DELETE RESTRICT
 );
+--Checkingpoint
+CREATE TABLE Checkpoints (
+    CheckpointID INT AUTO_INCREMENT PRIMARY KEY,
+    EventID INT NOT NULL,
+    CheckpointName VARCHAR(150) NOT NULL,
+    Location VARCHAR(255),
+    CheckpointOrder INT NOT NULL,
+    DistanceFromStart DECIMAL(10,2),
+
+    FOREIGN KEY (EventID)
+        REFERENCES Events(EventID)
+        ON DELETE CASCADE
+); 
