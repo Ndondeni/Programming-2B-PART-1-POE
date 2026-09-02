@@ -124,3 +124,17 @@ CREATE TABLE Payments (
         REFERENCES Registrations(RegistrationID)
         ON DELETE CASCADE
 );
+
+--Results
+CREATE TABLE Results (
+    ResultID INT AUTO_INCREMENT PRIMARY KEY,
+    RegistrationID INT NOT NULL,
+    FinishTime TIME,
+    Position INT,
+    ResultStatus VARCHAR(50),
+    TimeChipNo VARCHAR(100),
+
+    FOREIGN KEY (RegistrationID)
+        REFERENCES Registrations(RegistrationID)
+        ON DELETE CASCADE
+);
